@@ -1,33 +1,8 @@
 <template>
   <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Tab 3</ion-title>
-      </ion-toolbar>
-    </ion-header>
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Tab 3</ion-title>
-        </ion-toolbar>
-      </ion-header>
-    <ion-tabs>
-          <ion-router-outlet class=""></ion-router-outlet>
-      <ion-tab-bar slot="top" class="mt-14 py-3">
-        <ion-tab-button tab="tab1" href="/tabs/tab3/mybooks">
-          <ion-label class="text-base font-bold" :class="(router.currentRoute.value.fullPath.includes('mybooks')) ? 'text-white' : ''">My Books</ion-label>
-        </ion-tab-button>
-
-        <ion-tab-button tab="tab2" href="/tabs/tab3/favourite">
-          <ion-label class="text-base font-bold" :class="(router.currentRoute.value.fullPath.includes('favourite')) ? 'text-white' : ''">Favourites</ion-label>
-        </ion-tab-button>
-
-        <ion-tab-button tab="tab3" href="/tabs/tab3/bookmark">
-          <ion-label class="text-base font-bold" :class="(router.currentRoute.value.fullPath.includes('bookmark')) ? 'text-white' : ''">Bookmarks</ion-label>
-        </ion-tab-button>
-      </ion-tab-bar>
-      <!-- <div class="px-4 py-5">
-        <div class="my-5">
+      <div class="px-4 pb-10">
+        <div class="">
           <div class="bg-white px-4 rounded-md overflow-hidden">
             <ion-input
               placeholder="Search Books or Author..."
@@ -37,9 +12,7 @@
             ></ion-input>
           </div>
         </div>
-        <div class="my-5">          
-
-          <div class="grid gap-3 my-3 grid-cols-1">
+          <div class="grid gap-3 my-5 grid-cols-1">
             <library-card
               :book="book"
               v-for="book in newBooks"
@@ -47,55 +20,26 @@
               class="w-full"
             ></library-card>
           </div>
-        </div>
-      </div> -->
-    </ion-tabs>
-
-      <!-- <ExploreContainer name="Tab 3 page" /> -->
+      </div>
     </ion-content>
   </ion-page>
 </template>
-
-
-
-
-
-
-
 
 <script lang="ts">
 import { defineComponent } from "vue";
   import { useRouter } from 'vue-router';
 import {
   IonPage,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
   IonContent,
-  IonTabBar,
-  IonTabButton,
-  IonTabs,
-  IonLabel,
-  IonRouterOutlet,
 } from "@ionic/vue";
-// import ExploreContainer from "@/components/ExploreContainer.vue";
-// import LibraryCard from "@/components/LibraryCard.vue";
+import LibraryCard from "@/components/LibraryCard.vue";
 
 export default defineComponent({
-  name: "Tab3Page",
+  name: "BookmarkPage",
   components: {
-    // ExploreContainer,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
     IonContent,
     IonPage,
-    // LibraryCard,
-    IonLabel,
-    IonTabs,
-    IonTabBar,
-    IonTabButton,
-  IonRouterOutlet,
+    LibraryCard,
   },
   data() {
     return {

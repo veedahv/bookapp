@@ -1,14 +1,14 @@
 <template>
-  <div class="flex">
-    <ion-card color="light m-0 px-3">
-      <div class="flex gap-3 my-3 overflow-scroll">
+  <div class="flex w-full">
+    <ion-card color="light m-0 px-3 w-full">
+      <div class="flex flex-nowrap gap-3 my-3 w-full">
         <ion-img
           :src="book.volumeInfo.imageLinks.thumbnail"
-          class="h-32 w-28 object-cover"
+          class="h-32 w-28 flex-none object-cover"
         ></ion-img>
-        <div class="flex flex-col justify-between py-3">
+        <div class="flex-auto flex flex-col justify-between py-3">
           <div>
-            <ion-title class="px-0 font-medium text-lg max-w-[10rem]">
+            <ion-title class="px-0 font-medium text-lg max-w-full sentence-wrap">
               {{ book.volumeInfo.title }}
             </ion-title>
             <!-- <small
@@ -45,10 +45,6 @@
 </template>
 
 
-
-
-
-
 <script lang="ts">
 import { defineComponent } from "vue";
 import {
@@ -62,7 +58,7 @@ import {
   IonCard,
   IonImg,
 } from "@ionic/vue";
-import { star, starOutline } from "ionicons/icons";
+// import { star, starOutline } from "ionicons/icons";
 // import ExploreContainer from "@/components/ExploreContainer.vue";
 
 export default defineComponent({
@@ -79,12 +75,12 @@ export default defineComponent({
     IonCard,
     IonImg,
   },
-  setup() {
-    return {
-      star,
-      starOutline,
-    };
-  },
+//   setup() {
+//     return {
+//       star,
+//       starOutline,
+//     };
+//   },
   props: ["book"],
   //   data() {
   //     return {
@@ -97,4 +93,14 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+/* .sentence-wrap {
+    overflow-wrap: break-word;
+} */
+.sentence-wrap {
+   text-overflow: unset;
+   white-space: unset;
+}
+</style>
 
