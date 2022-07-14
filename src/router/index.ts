@@ -86,6 +86,10 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'signup',
         component: () => import('@/views/auth/SignUp.vue')
+      },
+      {
+        path: 'emailsent',
+        component: () => import('@/views/auth/EmailSent.vue')
       }
     ]
   },
